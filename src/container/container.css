@@ -1,0 +1,62 @@
+/*#a7ffce*/
+:host {
+  width: 100%;
+  height: 100%;
+  background: var(--doc-container-bg, #f1f9f9);
+  display: block;
+  overflow: hidden auto;
+  font-family: unset;
+  color: var(--doc-container-color, #232323);
+}
+
+.content {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 45rem 1fr;
+}
+
+.content-phone {
+  grid-template-columns: 0px 100%;
+}
+
+.content-tablet {
+  grid-template-columns: 1fr 45rem;
+}
+
+section[slot="view"] code {
+  background: var(--doc-code-bg, #263946);
+  color: var(--doc-code-color, #76ffdf);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
+doc-code {
+  margin: 0px calc(var(--doc-article-padding, 2rem) * -1);
+}
+
+doc-table td {
+  padding: 0.5rem 2rem 0.5rem 0px;
+  vertical-align: top;
+}
+
+doc-table tr:first-child td {
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px solid currentColor;
+}
+
+section[slot="view"] a {
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  color: unset;
+  font-size: 0.9em;
+  margin-right: 0.1rem;
+}
+
+section[slot="view"] a:hover {
+  background: var(--doc-container-bg, #f1f9f9);
+}

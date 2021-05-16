@@ -1,0 +1,21 @@
+a {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: unset;
+}
+
+:host([direction="<"]) {
+    background: var(--doc-container-bg, #f1f9f9);
+}
+
+:host([direction=">"]) a {
+    flex-flow: row-reverse;
+}
+
+:host(:not([href])) svg {
+    display: none;
+}

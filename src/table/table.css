@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  overflow-x: auto;
+}
+
+table {
+  font-size: 0.9em;
+  width: 100%;
+  border-collapse: collapse;
+}
