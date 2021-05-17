@@ -1,15 +1,15 @@
 import {
-  RouterRedirect,
-  RouterSwitch,
-  RouterCase,
-  RouterLink,
+    RouterRedirect,
+    RouterSwitch,
+    RouterCase,
+    RouterLink,
 } from "@atomico/components/router";
 
 export {
-  RouterRedirect,
-  RouterSwitch,
-  RouterCase,
-  RouterLink,
+    RouterRedirect,
+    RouterSwitch,
+    RouterCase,
+    RouterLink,
 } from "@atomico/components/router";
 
 import { Container } from "./container/container.jsx";
@@ -48,6 +48,12 @@ export { MenuPhone } from "./menu-phone/menu-phone.jsx";
 import { Table } from "./table/table.jsx";
 export { Table } from "./table/table.jsx";
 
+import { Quote } from "./quote/quote.jsx";
+export { Quote } from "./quote/quote.jsx";
+
+import { Preview } from "./preview/preview.jsx";
+export { Preview } from "./preview/preview.jsx";
+
 customElements.define("doc-router-redirect", RouterRedirect);
 customElements.define("doc-router-switch", RouterSwitch);
 customElements.define("doc-router-case", RouterCase);
@@ -65,9 +71,11 @@ customElements.define("doc-pagination-item", PaginationItem);
 customElements.define("doc-button", Button);
 customElements.define("doc-menu-phone", MenuPhone);
 customElements.define("doc-table", Table);
+customElements.define("doc-quote", Quote);
+customElements.define("doc-preview", Preview);
 
 customElements.define("doc-menu-item", MenuItem, {
-  extends: "a",
+    extends: "a",
 });
 
 customElements.define("doc-code", Code);

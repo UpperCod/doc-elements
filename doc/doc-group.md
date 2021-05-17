@@ -2,7 +2,7 @@
 title: doc-group
 ---
 
-Crea las rutas asociadas a la documentacion, puedes crear mas de un grupo.
+Create the routes associated with the documentation, you can create more than one group.
 
 # Ejemplo
 
@@ -13,8 +13,9 @@ Crea las rutas asociadas a la documentacion, puedes crear mas de un grupo.
 </doc-group>
 ```
 
-## Propiedades
+## Properties
 
-| Propiedadad | Tipo   | Descripcion                                                                             |
-| ----------- | ------ | --------------------------------------------------------------------------------------- |
-| label       | String | define un encabeado para el grupo, este a su vez pasa a ser el folder para `doc-source` |
+| Property | Type     | Description                                                                     |
+| -------- | -------- | ------------------------------------------------------------------------------- |
+| label    | String   | define a header for the group, this in turn becomes the folder for `doc-source` |
+| sources  | Source[] | sources type components associated with the group                               |

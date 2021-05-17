@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "npm": "exports src/*.js --types --exports --main components"
+    "npm": "exports src/*.js --types --exports --minify --main components"
   },
   "dependencies": {
     "@atomico/components": "latest",

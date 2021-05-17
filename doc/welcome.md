@@ -2,9 +2,9 @@
 title: Doc Elements
 ---
 
-webcomponents for fast, simple and lightweight documentation.
+    > webcomponents for fast, simple and lightweight documentation.
 
-## Instalacion
+## Installation
 
 ```bash
 # NPM

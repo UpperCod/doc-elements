@@ -1,17 +1,23 @@
 button {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 100rem;
-  background: var(--doc-button-bg, #fff);
-  border: 1px solid var(--doc-button-border, #ececec);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100rem;
+    background: var(--doc-button-bg, #fff);
+    border: 1px solid var(--doc-button-border, #ececec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 :host([dark]) button {
-  color: var(--doc-button-border, #ececec);
-  border: none;
-  background: var(--doc-button-bg-dark, #000);
+    color: var(--doc-button-border, #ececec);
+    border: none;
+    background: var(--doc-button-bg-dark, #000);
+}
+
+@media (max-width: 300px) {
+    button {
+        background: red;
+    }
 }

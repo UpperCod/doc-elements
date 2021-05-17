@@ -2,19 +2,17 @@
 title: Markdown
 ---
 
-La sintaxis de markdown es soportada gracias a @uppercod/markdown-inline de tan solo 1kB.
-
-ud puede usar markdown desde un fichero JS o Md.
+The markdown syntax is supported thanks to [@uppercod/markdown-inline](https://github.com/UpperCod/markdown-inline) of only 1kB.
 
 ## JS
 
-El uso de template-string permite insertar contenido HTML y JSX, entregando una experiencia similar a MDX.
+The use of template-string allows inserting HTML and JSX content, delivering an experience similar to MDX.
 
 ```js
 import md from "doc-elements/md";
 
 export const meta = {
-  title: "my page",
+    title: "my page",
 };
 
 export default md`
@@ -30,14 +28,14 @@ const x = <host></host>;
 `;
 ```
 
-**Para usar html dentro del JSX importe el modulo `atomico/html`**, ejemplo:
+**To use html within the JSX import the `atomico/html` model**, example:
 
 ```js
 import html from "atomico/html";
 import md from "doc-elements/md";
 
 export const meta = {
-  title: "my page",
+    title: "my page",
 };
 
 export default md`
@@ -47,4 +45,4 @@ ${html`<button></button>`}
 `;
 ```
 
-**Compatible con JSX**
+**JSX Compatible**

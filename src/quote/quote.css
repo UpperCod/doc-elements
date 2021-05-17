@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.quote {
+    padding-right: 1rem;
+    padding-top: 0.2em;
+}
+
+.quote svg:first-child {
+    margin-right: 0.2rem;
+}
+
+.content {
+    flex: 0%;
+}

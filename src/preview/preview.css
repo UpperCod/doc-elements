@@ -1,0 +1,8 @@
+:host {
+    background: var(--doc-container-bg, #f1f9f9);
+    display: flex;
+    padding: 2rem;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}

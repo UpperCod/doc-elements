@@ -2,22 +2,22 @@
 title: doc-container
 ---
 
-Contenedor principal, logra interpretar lso componentes anidados.
+Main container, manages to interpret nested components.
 
-## Propiedades
+## Properties
 
-| Propiedad | tipo             | descripcion                                                   |
-| --------- | ---------------- | ------------------------------------------------------------- |
-| path      | string, opcional | las rutas dentro del contedor se resuelven desde el path dado |
+| Property | Type             | Description                                                 |
+| -------- | ---------------- | ----------------------------------------------------------- |
+| path     | string, optional | paths within the container are resolved from the given path |
 
-## slots
+## Slots
 
-| slot  | tipo   | description             |
-| ----- | ------ | ----------------------- |
-| brand | imagen | logo a asociar al aside |
+| Name  | Type   | Description                  |
+| ----- | ------ | ---------------------------- |
+| brand | imagen | logo to associate with aside |
 
-## custom properties
+## Custom properties
 
-| Propiedad            | tipo  | descripcion    |
-| -------------------- | ----- | -------------- |
-| `--doc-container-bg` | color | Color de fondo |
+| Property             | Type  | Description      |
+| -------------------- | ----- | ---------------- |
+| `--doc-container-bg` | color | Background color |

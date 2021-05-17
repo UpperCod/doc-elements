@@ -1,27 +1,29 @@
 :host {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 .aside {
-  position: sticky;
-  top: 0;
-  padding: 3rem 20%;
-  box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    padding: 3rem 20%;
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .aside-content {
-  max-width: 13rem;
-  position: sticky;
-  top: 3rem;
+    max-width: 13rem;
+    position: sticky;
+    top: 3rem;
 }
 
 .aside-menu {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem 0px;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0px;
 }
 
 .aside-header {
-  padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }

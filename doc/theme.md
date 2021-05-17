@@ -4,13 +4,12 @@ title: Theme
 
 # Custom properties
 
-| Property                | Type       | Description                                                                                       |
-| ----------------------- | ---------- | ------------------------------------------------------------------------------------------------- |
-| `--doc-container-bg`    | color      | Color de fondo del contenedor                                                                     |
-| `--doc-code-bg`         | color      | color de fondo del codigo                                                                         |
-| `--doc-code-color`      | color      | color del texto del codigo                                                                        |
-| `--doc-button-bg`       | color      | color de fondo del boton                                                                          |
-| `--doc-button-bg-dark`  | color      | Si el atributo es dark en la instancia del boton, se asociara este esta varaiable como background |
-| `--doc-hero-header-bg`  | background | Fondo opcional                                                                                    |
-| `--doc-hero-header-bg`  | background | Fondo opcional                                                                                    |
-| `--doc-content-padding` | size       | padding en el en contenido central                                                                |
+| Property                | Type       | Description                                            |
+| ----------------------- | ---------- | ------------------------------------------------------ |
+| `--doc-container-bg`    | background | background for `<doc-container/>` and `<doc article/>` |
+| `--doc-code-bg`         | background | background for `<doc-code/>`                           |
+| `--doc-code-color`      | color      | text color for `<doc-code/>`                           |
+| `--doc-button-bg`       | color      | background for `<doc-button/>`                         |
+| `--doc-button-bg-dark`  | color      | background for `<doc-button dark/>`                    |
+| `--doc-hero-bg`         | background | background for `<doc-hero/>`                           |
+| `--doc-content-padding` | size       | padding shared by `<doc-hero/>` and `<doc-article/>`   |
