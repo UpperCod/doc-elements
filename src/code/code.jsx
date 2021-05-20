@@ -13,7 +13,6 @@ function code({ type }) {
 
     return (
         <host shadowDom>
-            <style>{style}</style>
             {preview && format == "html" && (
                 <Preview class="previw">
                     {html([host.current.textContent])}
@@ -64,6 +63,8 @@ function code({ type }) {
         </host>
     );
 }
+
+code.styles = style;
 
 code.props = {
     type: String,

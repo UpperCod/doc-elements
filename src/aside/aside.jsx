@@ -1,16 +1,9 @@
 import { c } from "atomico";
-import styleAside from "./aside.css";
+import style from "./aside.css";
 
-/**
- *
- * @param {Object} props
- * @param {import("../group/group").Group["Props"][]} props.groups
- * @param {(path:string)=>any} props.match
- */
 export function aside() {
     return (
         <host shadowDom>
-            <style>{styleAside}</style>
             <div class="aside">
                 <div class="aside-content">
                     <header class="aside-header">
@@ -24,6 +17,8 @@ export function aside() {
         </host>
     );
 }
+
+aside.styles = style;
 
 aside.props = {
     view: {

@@ -4,13 +4,14 @@ import style from "./button.css";
 function button() {
     return (
         <host shadowDom>
-            <style>{style}</style>
             <button>
                 <slot></slot>
             </button>
         </host>
     );
 }
+
+button.styles = style;
 
 button.props = {
     dark: {

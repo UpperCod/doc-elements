@@ -4,7 +4,6 @@ import style from "./quote.css";
 function quote() {
     return (
         <host shadowDom>
-            <style>{style}</style>
             <div class="quote">
                 <svg
                     viewBox="0 0 120 180"
@@ -39,5 +38,7 @@ function quote() {
         </host>
     );
 }
+
+quote.styles = style;
 
 export const Quote = c(quote);

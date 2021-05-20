@@ -39,7 +39,6 @@ function container() {
 
     return (
         <host shadowDom onChangeSources={update}>
-            <style>{style}</style>
             <slot ref={ref}></slot>
             <RouterRedirect class={`content content-${view}`}>
                 <Aside view={view}>
@@ -152,6 +151,8 @@ function container() {
         </host>
     );
 }
+
+container.styles = style;
 
 container.props = {
     path: String,
