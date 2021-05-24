@@ -7,11 +7,15 @@ function menuPhone() {
 
     return (
         <host shadowDom>
-            <div class="content">
-                <div class="content-brand">
-                    <slot name="brand"></slot>
+            <div class="content-scroll">
+                <div class="content-space">
+                    <div class="content">
+                        <div class="content-brand">
+                            <slot name="brand"></slot>
+                        </div>
+                        <slot name="aside-menu"></slot>
+                    </div>
                 </div>
-                <slot name="aside-menu"></slot>
             </div>
             <div class="button-container">
                 <Button dark onclick={() => setShow(!show)}>

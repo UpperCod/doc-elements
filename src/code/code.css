@@ -5,14 +5,19 @@
 .code {
     position: relative;
 }
-pre {
+
+.pre,
+.inject {
+    padding: 2rem;
+}
+
+.pre {
     width: 100%;
     display: block;
     overflow-x: auto;
-    padding: 2rem;
     box-sizing: border-box;
-    background: var(--doc-code-bg, #263946);
-    color: var(--doc-code-color, #76ffdf);
+    background-color: var(--doc-code_bgcolor, #263946);
+    color: var(--doc-code_color, #76ffdf);
     font-size: 0.9em;
     line-height: 1.4em;
     margin: 0px;

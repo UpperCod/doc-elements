@@ -18,6 +18,6 @@ Main container, manages to interpret nested components.
 
 ## Custom properties
 
-| Property             | Type  | Description      |
-| -------------------- | ----- | ---------------- |
-| `--doc-container-bg` | color | Background color |
+| Property        | Type  | Description      |
+| --------------- | ----- | ---------------- |
+| `--doc_bgcolor` | color | Background color |

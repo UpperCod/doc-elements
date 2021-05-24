@@ -13,14 +13,15 @@ function code({ type }) {
 
     return (
         <host shadowDom>
-            {preview && format == "html" && (
-                <Preview class="previw">
-                    {html([host.current.textContent])}
-                </Preview>
+            {preview == "preview" && format == "html" && (
+                <Preview>{html([host.current.textContent])}</Preview>
+            )}
+            {preview == "inject" && format == "html" && (
+                <div class="inject">{html([host.current.textContent])}</div>
             )}
             {preview != "inject" && (
                 <div class="code">
-                    <pre>
+                    <pre class="pre">
                         <slot></slot>
                     </pre>
                     <div class="button-align">

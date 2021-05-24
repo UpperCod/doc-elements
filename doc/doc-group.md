@@ -4,7 +4,7 @@ title: doc-group
 
 Create the routes associated with the documentation, you can create more than one group.
 
-# Ejemplo
+# Example
 
 ```html
 <doc-group label="Welcome">

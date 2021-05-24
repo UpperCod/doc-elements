@@ -1,33 +1,33 @@
 .items {
-  display: grid;
-  grid-template-columns: 0.065rem auto;
-  grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: 0.065rem auto;
+    grid-gap: 1rem;
 }
 
 .items-line {
-  background: var(--doc-menu-line-inactive, rgba(0, 0, 0, 0.25));
-  border-radius: 100px;
+    background: var(--doc_inactive-line-color, rgba(0, 0, 0, 0.25));
+    border-radius: 100px;
 }
 .items-line div {
-  width: 300%;
-  left: 50%;
-  height: var(--h);
-  position: relative;
-  transform: translate(-50%, var(--y));
-  background: var(--doc-menu-line-active, currentColor);
-  transition: 0.3s ease all;
-  border-radius: 1rem;
+    width: 300%;
+    left: 50%;
+    height: var(--h);
+    position: relative;
+    transform: translate(-50%, var(--y));
+    background: var(--doc_active-line-color, currentColor);
+    transition: 0.3s ease all;
+    border-radius: 1rem;
 }
 
 ::slotted(a) {
-  text-decoration: none;
-  color: unset;
-  display: block;
-  padding: 0.5rem 0rem;
-  cursor: pointer;
-  white-space: nowrap;
+    text-decoration: none;
+    color: unset;
+    display: block;
+    padding: 0.5rem 0rem;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 ::slotted(:not(a)) {
-  opacity: 0.75;
+    opacity: 0.75;
 }
