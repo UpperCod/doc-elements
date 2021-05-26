@@ -1,7 +1,7 @@
 import { c } from "atomico";
 import style from "./aside.css";
 
-export function aside() {
+function aside() {
     return (
         <host shadowDom>
             <div class="aside">

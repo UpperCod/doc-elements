@@ -2,7 +2,7 @@ import { c } from "atomico";
 import style from "./pagination.css";
 export { PaginationItem } from "./pagination-item.jsx";
 
-export function pagination() {
+function pagination() {
     return (
         <host shadowDom>
             <slot></slot>
