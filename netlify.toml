@@ -1,5 +1,4 @@
 [[redirects]]
-from = "*"
-to = "/"
+from = "/*"
+to = "/index.html"
 status = 200
-query = {path = ":path"}
