@@ -1,7 +1,7 @@
 {
   "name": "doc-elements",
   "description": "webcomponents for fast, simple and lightweight documentation.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "vite",
     "build": "vite build",
