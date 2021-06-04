@@ -1,7 +1,7 @@
 {
   "name": "doc-elements",
   "description": "webcomponents for fast, simple and lightweight documentation.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -37,19 +37,20 @@
   "exports": {
     ".": "./dest/components.js",
     "./md": "./dest/md.js",
-    "./components.react": "./dest/components.react.js"
+    "./components.react": "./dest/components.react.js",
+    "./components.visibility": "./dest/components.visibility.css"
   },
-  "types": "types/dest/components.d.ts",
+  "types": "types/components.d.ts",
   "typesVersions": {
     "*": {
       "md": [
-        "types/src/md.d.ts"
+        "./types/md.d.ts"
       ],
       "components": [
-        "types/dest/components.d.ts"
+        "./types/components.d.ts"
       ],
       "components.react": [
-        "types/dest/components.react.d.ts"
+        "./types/components.react.d.ts"
       ]
     }
   }
