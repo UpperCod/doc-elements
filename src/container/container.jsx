@@ -1,4 +1,4 @@
-import { c, css, useRef, useUpdate } from "atomico";
+import { c, useRef, useUpdate, useEffect } from "atomico";
 import { useRouteMatch } from "@atomico/hooks/use-router";
 import { useSlot } from "@atomico/hooks/use-slot";
 import { useResponsiveState } from "@atomico/hooks/use-responsive-state";
@@ -36,6 +36,10 @@ function container() {
     const [prev, next] = getPagination(groups, match);
 
     const view = useResponsiveState("phone, tablet 834px , desktop 1080px");
+
+    useEffect(() => {
+        if (meta.title) document.title = meta.title;
+    }, [meta]);
 
     return (
         <host shadowDom onChangeSources={update}>
