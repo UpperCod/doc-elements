@@ -38,7 +38,7 @@ function container() {
     const view = useResponsiveState("phone, tablet 834px , desktop 1080px");
 
     useEffect(() => {
-        if (meta.title) document.title = meta.title;
+        if (meta && meta.title) document.title = meta.title;
     }, [meta]);
 
     return (
