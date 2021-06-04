@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "exports": "exports src/*.js --types --exports --minify --main components",
+    "exports": "exports src/*.js --types --exports  --main components",
     "prepublishOnly": "npm run exports"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "atomico": "latest"
   },
   "devDependencies": {
-    "@atomico/exports": "^0.13.0",
+    "@atomico/exports": "^0.14.1",
     "@types/react": "^17.0.9",
     "@uppercod/vite-meta-url": "^1.3.1",
     "csso": "^4.2.0",
@@ -23,8 +23,8 @@
     "vite": "latest"
   },
   "peerDependencies": {
-    "react": "latest",
-    "@types/react": "latest"
+    "@types/react": "latest",
+    "react": "latest"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -32,6 +32,25 @@
     },
     "@types/react": {
       "optional": true
+    }
+  },
+  "exports": {
+    ".": "./dest/components.js",
+    "./md": "./dest/md.js",
+    "./components.react": "./dest/components.react.js"
+  },
+  "types": "types/dest/components.d.ts",
+  "typesVersions": {
+    "*": {
+      "md": [
+        "types/src/md.d.ts"
+      ],
+      "components": [
+        "types/dest/components.d.ts"
+      ],
+      "components.react": [
+        "types/dest/components.react.d.ts"
+      ]
     }
   }
 }
