@@ -5,7 +5,7 @@
 }
 
 .items-line {
-    background: var(--doc_inactive-line-color, rgba(0, 0, 0, 0.25));
+    background: var(--doc-menu--on-line-color, rgba(0, 0, 0, 0.25));
     border-radius: 100px;
 }
 .items-line div {
@@ -14,7 +14,7 @@
     height: var(--h);
     position: relative;
     transform: translate(-50%, var(--y));
-    background: var(--doc_active-line-color, currentColor);
+    background: var(--doc-menu--off-line-color, currentColor);
     transition: 0.3s ease all;
     border-radius: 1rem;
 }

@@ -2,8 +2,8 @@ button {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100rem;
-    background-color: var(--doc-button_bgcolor, #fff);
-    border: 1px solid var(--doc-button_border-color, #ececec);
+    background-color: var(--doc-button--bgcolor, #fff);
+    border: 1px solid var(--doc-button--border-color, #ececec);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,9 +11,9 @@ button {
 }
 
 :host([dark]) button {
-    color: var(--doc-button_border, #ececec);
+    color: var(--doc-button--border, #ececec);
     border: none;
-    background: var(--doc-button_bgcolor-dark, #000);
+    background: var(--doc-button--bgcolor-dark, #000);
 }
 
 @media (max-width: 300px) {

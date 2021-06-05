@@ -16,8 +16,8 @@
     display: block;
     overflow-x: auto;
     box-sizing: border-box;
-    background-color: var(--doc-code_bgcolor, #263946);
-    color: var(--doc-code_color, #76ffdf);
+    background-color: var(--doc-code--bgcolor, #263946);
+    color: var(--doc-code--color, #76ffdf);
     font-size: 0.9em;
     line-height: 1.4em;
     margin: 0px;
