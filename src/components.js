@@ -1,10 +1,3 @@
-import {
-    RouterRedirect,
-    RouterSwitch,
-    RouterCase,
-    RouterLink,
-} from "@atomico/components/router";
-
 export {
     RouterRedirect,
     RouterSwitch,
@@ -53,11 +46,6 @@ export { Quote } from "./quote/quote.jsx";
 
 import { Preview } from "./preview/preview.jsx";
 export { Preview } from "./preview/preview.jsx";
-
-customElements.define("doc-router-redirect", RouterRedirect);
-customElements.define("doc-router-switch", RouterSwitch);
-customElements.define("doc-router-case", RouterCase);
-customElements.define("doc-router-link", RouterLink, { extends: "a" });
 
 customElements.define("doc-container", Container);
 customElements.define("doc-aside", Aside);
