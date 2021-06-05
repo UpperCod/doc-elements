@@ -17,3 +17,5 @@ title: Theme
 | `--doc-article--bgcolor` | color | background-color for `<doc-article/>` |
 | `--doc-article--space` | size | padding shared by `<doc-hero/>` and `<doc-article/>` |
 | `--doc-hero--bg` | background | background for `<doc-hero/>` |
+| `--doc-preview--bg` | background | background for `<doc-preview/>` |
+| `--doc-pagination-item--bg` | color | background-color for `<doc-pagination-item/>` |
