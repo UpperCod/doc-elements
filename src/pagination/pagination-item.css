@@ -9,7 +9,7 @@ a {
 }
 
 :host([direction="<"]) {
-    background: var(--doc_bgcolor, #f1f9f9);
+    background: var(--doc-pagination-item--bgcolor, #f1f9f9);
 }
 
 :host([direction=">"]) a {
