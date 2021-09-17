@@ -14,7 +14,7 @@ function code({ type }) {
     return (
         <host shadowDom>
             {preview == "preview" && format == "html" && (
-                <Preview>{html([host.current.textContent])}</Preview>
+                <Preview innerHTML={host.current.textContent}></Preview>
             )}
             {preview == "inject" && format == "html" && (
                 <div class="inject">{html([host.current.textContent])}</div>
