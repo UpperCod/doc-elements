@@ -29,43 +29,42 @@
     </head>
     <body>
         <doc-container>
-            <img src="./doc/logo.svg" alt="logo" width="120px" slot="brand" />
-            <doc-group label="Tutorial">
-                <doc-source
-                    path="/"
-                    label="Welcome"
-                    load="/doc/welcome.md"
-                ></doc-source>
-                <doc-source
-                    label="Markdown"
-                    load="/doc/markdown.md"
-                ></doc-source>
-                <doc-source label="Theme" load="/doc/theme.md"></doc-source>
-            </doc-group>
-            <doc-group label="Components">
-                <doc-source
-                    label="doc-container"
-                    load="/doc/doc-container.md"
-                ></doc-source>
-                <doc-source
-                    label="doc-group"
-                    load="/doc/doc-group.md"
-                ></doc-source>
-                <doc-source
-                    label="doc-source"
-                    load="/doc/doc-source.md"
-                ></doc-source>
-            </doc-group>
-            <doc-group label="Support">
-                <doc-source
-                    label="Twitter"
-                    href="https://twitter.com/uppercod"
-                ></doc-source>
-                <doc-source
-                    label="Github"
-                    href="https://github.com/uppercod/doc-elements"
-                ></doc-source>
-            </doc-group>
+            <doc-header>
+                <img
+                    slot="brand"
+                    src="doc/logo-v2.svg"
+                    alt="Logotipo"
+                    width="180px"
+                />
+                <span>Every!</span>
+                <span>Every!</span>
+                <span>Every!</span>
+            </doc-header>
+            <doc-aside slot="aside-left">
+                <doc-group label="Tutoriales">
+                    <doc-source
+                        src="./doc/demo.md"
+                        label="Welcome"
+                        href="/"
+                        id="welcome"
+                        active
+                        keywords="Tutorial"
+                    ></doc-source>
+                    <doc-source
+                        src="./doc/doc-container.md"
+                        label="Welcome"
+                        href="/doc-container"
+                        id="welcome"
+                    ></doc-source>
+                    <doc-source
+                        src="./doc/doc-source.md"
+                        label="Welcome"
+                        href="/doc-source"
+                        id="welcome"
+                    ></doc-source>
+                </doc-group>
+            </doc-aside>
+            <doc-content> </doc-content>
         </doc-container>
     </body>
 </html>

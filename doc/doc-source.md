@@ -14,7 +14,7 @@ Associate a resource to doc-group, this resource can be a link, dynamic import o
 
 **jsx**: The load argument also supports the use of functions to generate the dynamic card at the time of the callback execution.
 
-```jsx
+```js
 const myCode = () => import("./my-code.js");
 
 function myDoc() {

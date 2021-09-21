@@ -1,34 +1,50 @@
-import { c, useRef } from "atomico";
+import { c, css, useRef } from "atomico";
 import { useSlot } from "@atomico/hooks/use-slot";
-import { Source } from "../source/source.jsx";
 
-function group() {
-  const ref = useRef();
-  const slots = useSlot(ref);
-
-  const sources = slots.filter((child) => child instanceof Source);
-
-  return (
-    <host shadowDom sources={sources}>
-      <slot ref={ref}></slot>
-    </host>
-  );
+/**
+ *
+ * @param {import("atomico").Props<group.props>}  props
+ */
+function group({ label }) {
+    const ref = useRef();
+    const sources = useSlot(ref);
+    return (
+        <host
+            shadowDom
+            sources={sources.filter((child) => child instanceof HTMLElement)}
+        >
+            <slot name="label">
+                <strong>{label}</strong>
+            </slot>
+            <slot ref={ref}></slot>
+        </host>
+    );
 }
 
 group.props = {
-  label: String,
-  sources: {
-    type: Array,
-    event: {
-      type: "ChangeSources",
-      bubbles: true,
+    label: String,
+    sources: {
+        type: Array,
+        event: {
+            type: "ChangeSources",
+            bubbles: true,
+        },
+        /**
+         *
+         * @returns {Source["Props"][]}
+         */
+        value: () => [],
     },
-    /**
-     *
-     * @returns {Source["Props"][]}
-     */
-    value: () => [],
-  },
 };
+
+group.styles = css`
+    :host {
+        display: grid;
+        grid-gap: 15px;
+    }
+    slot[name="label"] {
+        font-size: 18px;
+    }
+`;
 
 export const Group = c(group);

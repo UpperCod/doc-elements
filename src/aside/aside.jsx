@@ -1,24 +1,13 @@
-import { c } from "atomico";
-import style from "./aside.css";
+import { c, css } from "atomico";
+import { tokensSpace } from "../tokens";
 
 function aside() {
     return (
         <host shadowDom>
-            <div class="aside">
-                <div class="aside-content">
-                    <header class="aside-header">
-                        <slot name="brand"></slot>
-                    </header>
-                    <div class="aside-menu">
-                        <slot name="aside-menu"></slot>
-                    </div>
-                </div>
-            </div>
+            <slot></slot>
         </host>
     );
 }
-
-aside.styles = style;
 
 aside.props = {
     view: {
@@ -26,5 +15,18 @@ aside.props = {
         reflect: true,
     },
 };
+
+aside.styles = [
+    tokensSpace,
+    css`
+        :host {
+            display: grid;
+            position: sticky;
+            top: 0;
+            padding: var(--space-x2);
+            grid-gap: var(--space-y2);
+        }
+    `,
+];
 
 export const Aside = c(aside);

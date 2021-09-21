@@ -1,5 +1,4 @@
-import { c } from "atomico";
-import style from "./table.css";
+import { c, css } from "atomico";
 
 function table() {
     return (
@@ -11,6 +10,20 @@ function table() {
     );
 }
 
-table.styles = style;
+table.styles = css`
+    :host {
+        display: block;
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 0.9em;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    :host-context(h1) {
+        font-weight: 300;
+    }
+`;
 
 export const Table = c(table);
