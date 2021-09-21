@@ -62,9 +62,7 @@ aside.styles = [
             align-items: center;
             justify-content: center;
         }
-        :host([show]) .content {
-            display: flex;
-        }
+
         @media (max-width: 720px) {
             .menu {
                 display: flex;
@@ -79,6 +77,10 @@ aside.styles = [
                 background: white;
                 z-index: 1;
                 display: none;
+            }
+            :host([show]) .content {
+                display: flex;
+                flex-flow: column nowrap;
             }
         }
     `,
