@@ -1,5 +1,4 @@
 import { c, css, useHost, useMemo, useRef } from "atomico";
-import { Button } from "../button/button.jsx";
 import { Preview } from "../preview/preview.jsx";
 import { useCopy } from "@atomico/hooks/use-copy";
 import { tokensColor, tokensSpace } from "../tokens";
@@ -17,22 +16,27 @@ function code({ type }) {
 
     const code = slot.find((item) => item instanceof Element);
 
-    const html = useMemo(
-        () =>
-            code && format
+    const html = useMemo(() => {
+        try {
+            return code && format
                 ? Prism.highlight(
                       code.textContent,
                       Prism.languages[format],
                       format
                   )
-                : "",
-        [code, format]
-    );
+                : "";
+        } catch (e) {
+            return "";
+        }
+    }, [code, format]);
 
     return (
-        <host shadowDom>
+        <host shadowDom preview={!!preview}>
             {preview == "preview" && format == "html" && (
-                <Preview innerHTML={host.current.textContent}></Preview>
+                <Preview
+                    class="preview"
+                    innerHTML={host.current.textContent}
+                ></Preview>
             )}
             {preview == "inject" && format == "html" && (
                 <div class="inject" innerHTML={host.current.textContent}></div>
@@ -46,41 +50,35 @@ function code({ type }) {
                         ></slot>
                         {html && <code innerHTML={html}></code>}
                     </pre>
-                    <div class="button-align">
-                        <Button
-                            type="circle"
-                            class="button-copy"
-                            onclick={copy}
-                        >
-                            <svg width="13" height="13" viewBox="0 0 13 13">
-                                <rect
-                                    rx="1"
-                                    ry="1"
-                                    width="10"
-                                    height="2"
-                                    fill="currentColor"
-                                ></rect>
-                                <rect
-                                    rx="1"
-                                    ry="1"
-                                    width="2"
-                                    height="10"
-                                    fill="currentColor"
-                                ></rect>
-                                <rect
-                                    width="8"
-                                    height="8"
-                                    rx="1"
-                                    ry="1"
-                                    x="4"
-                                    y="4"
-                                    fill="transparent"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                ></rect>
-                            </svg>
-                        </Button>
-                    </div>
+                    <button class="button-copy" onclick={copy}>
+                        <svg width="13" height="13" viewBox="0 0 13 13">
+                            <rect
+                                rx="1"
+                                ry="1"
+                                width="10"
+                                height="2"
+                                fill="currentColor"
+                            ></rect>
+                            <rect
+                                rx="1"
+                                ry="1"
+                                width="2"
+                                height="10"
+                                fill="currentColor"
+                            ></rect>
+                            <rect
+                                width="8"
+                                height="8"
+                                rx="1"
+                                ry="1"
+                                x="4"
+                                y="4"
+                                fill="transparent"
+                                stroke-width="2"
+                                stroke="currentColor"
+                            ></rect>
+                        </svg>
+                    </button>
                 </div>
             )}
         </host>
@@ -89,6 +87,10 @@ function code({ type }) {
 
 code.props = {
     type: String,
+    preview: {
+        type: Boolean,
+        reflect: true,
+    },
 };
 
 code.styles = [
@@ -97,16 +99,19 @@ code.styles = [
     themeA11yDark,
     css`
         :host {
+            max-width: 100%;
             display: block;
             margin: 0.9em;
+            --radius: 0.5rem;
         }
         .code {
+            width: 100%;
             position: relative;
         }
 
         .pre,
         .inject {
-            padding: var(--space-y2);
+            padding: var(--space-xs);
         }
 
         .pre {
@@ -119,33 +124,44 @@ code.styles = [
             font-size: 0.9em;
             line-height: 1.4em;
             margin: 0px;
-        }
-
-        .button-align {
-            position: absolute;
-            top: 50%;
-            right: 0px;
-            transform: translate(50%, -50%);
+            border-radius: var(--radius);
         }
 
         .button-copy {
-            display: block;
-            transition: 0.2s ease all;
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: var(--code-color, #76ffdf);
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.3s ease all;
+            border-radius: calc(var(--radius) * 0.75);
         }
 
         .button-copy:active {
-            transform: scale(0.8);
+            background: rgba(0, 0, 0, 0);
         }
 
-        ::slotted(code) {
+        ::slotted(code),
+        code {
             padding: 0px !important;
             white-space: unset !important;
         }
 
-        @media (max-width: 480px) {
-            .button-copy {
-                display: none;
-            }
+        :host(:hover) .button-copy {
+            opacity: 1;
+        }
+
+        :host([preview]) .pre {
+            border-radius: 0px 0px var(--radius) var(--radius);
+        }
+
+        :host([preview]) .preview {
+            border-radius: var(--radius) var(--radius) 0px 0px;
         }
     `,
 ];

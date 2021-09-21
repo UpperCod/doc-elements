@@ -2,15 +2,13 @@ import { css } from "atomico";
 
 export const tokensSpace = css`
     :host {
-        --space-x: var(--doc--space-x, 20px);
-        --space-y: var(--doc--space-y, 10px);
-        --space-x2: calc(var(--space-x) * 2);
-        --space-y2: calc(var(--space-y) * 2);
-        --space-x3: calc(var(--space-x2) * 2);
-        --space-y3: calc(var(--space-y2) * 2);
-        --space-x4: calc(var(--space-x3) * 2);
-        --space-y4: calc(var(--space-y3) * 2);
-        --space-between: var(--doc--space-between, 15px);
+        --space-xxs: 8px;
+        --space-xs: 16px;
+        --space-s: 32px;
+        --space-l: 62px;
+        --space-xl: 124px;
+        --space-xxl: 244px;
+        --space-p10: 10%;
     }
 `;
 
@@ -22,12 +20,14 @@ export const tokenBorder = css`
 
 export const tokensColor = css`
     :host {
-        --primary: var(--doc--primary, #0080ff);
+        --primary: var(--doc--primary, #232329);
+        --primary-contrast: var(--doc--primary, white);
         --secondary: var(--doc--secondary, black);
         --active: var(--doc--active, var(--primary));
         --code-background: var(--doc--code-background, #263946);
         --code-color: var(--doc--code-color, #76ffdf);
         --quote-color: var(--doc--quote-color, var(--primary));
+        --preview-background: var(--doc--preview-background, #f1f9f9);
     }
 `;
 

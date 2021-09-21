@@ -1,5 +1,5 @@
-import { c } from "atomico";
-import style from "./preview.css";
+import { c, css } from "atomico";
+import { tokensColor } from "../tokens";
 
 function preview() {
     return (
@@ -11,6 +11,18 @@ function preview() {
     );
 }
 
-preview.styles = style;
+preview.styles = [
+    tokensColor,
+    css`
+        :host {
+            background: var(--preview-background, #f1f9f9);
+            display: flex;
+            padding: 2rem;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+    `,
+];
 
 export const Preview = c(preview);

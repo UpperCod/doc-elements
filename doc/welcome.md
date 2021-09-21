@@ -7,32 +7,36 @@ title: Doc Elements
 ## Installation
 
 ```bash
-# NPM
 npm install doc-elements
-
-# CDN, to start directly in the HTML
-http://jspm.dev/doc-elements
 ```
 
 ## Example
 
-```markup
+```html
 <doc-container>
-    <img slot="brand" src="./logo.svg" />
-    <doc-group label="Tutorial">
-        <doc-source
-            path="/"
-            label="welcome"
-            load="./src/welcome.js"></doc-source>
-        <doc-source
-            label="next content"
-            load="./src/next-content.js"></doc-source>
-    </doc-group>
+    <doc-header>
+        <img
+            slot="brand"
+            src="doc/logo-v2-contrast.svg"
+            alt="Logotipo"
+            width="180px"
+        />
+        <a ignore href="https://github.com/uppercod/doc-elements">Github</a>
+        <a ignore href="https://twitter.com/Uppercod">Twitter</a>
+        <a ignore href="https://t.co/GOwj7XKrvy?amp=1">Discord</a>
+    </doc-header>
+    <doc-aside>
+        <doc-group label="Tutoriales">
+            <doc-source
+                src="./doc/welcome.md"
+                label="Welcome"
+                href="/"
+                id="welcome"
+                active
+                keywords="Tutorial"
+            ></doc-source>
+        </doc-group>
+    </doc-aside>
+    <doc-content> </doc-content>
 </doc-container>
 ```
-
-Where :
-
-1. [doc-container](/components/doc-container): Element that interprets the nested components and generates the routes.
-2. [doc-group](/components/doc-group): Element that generates the groups in the navigation bar.
-3. [doc-source](/components/doc-source): Element that associates the resources to import, with which you can import JS or Markdown files.

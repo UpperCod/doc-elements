@@ -3,6 +3,9 @@ import { useRender } from "@atomico/hooks/use-render";
 import { setup } from "@uppercod/markdown-inline";
 import { h } from "atomico";
 import { tokensSpace, tokenBorder, tokensPattern } from "../tokens";
+import { Pagination } from "../pagination/pagination";
+
+let id = 0;
 
 function content(props) {
     const md = setup(h, {
@@ -29,16 +32,34 @@ function content(props) {
                 .replace(/,$/, "")}}`
         );
         if (frontmatter.title) {
-            children.unshift(<h1 slot="header">{frontmatter.title}</h1>);
+            children.unshift(
+                <h1 slot="header" key="header">
+                    {frontmatter.title}
+                </h1>
+            );
         }
         if (frontmatter.description) {
-            children.unshift(<p slot="header">{frontmatter.description}</p>);
+            children.unshift(
+                <p slot="header" key="header">
+                    {frontmatter.description}
+                </p>
+            );
         }
     } else {
         children.unshift(first);
     }
 
-    useRender(() => children);
+    useRender(() =>
+        children
+            .map((child) => ({
+                ...child,
+                props: { ...child.props, key: props.key || id++ },
+            }))
+            .concat(
+                <style key="style">{`::marker{font-weight:bold}`}</style>,
+                <Pagination key="pagination" slot="footer"></Pagination>
+            )
+    );
 
     return (
         <host shadowDom>
@@ -47,6 +68,9 @@ function content(props) {
             </div>
             <div class="content-padding content-markdown">
                 <slot></slot>
+            </div>
+            <div class="content-footer">
+                <slot name="footer"></slot>
             </div>
         </host>
     );
@@ -68,19 +92,21 @@ content.styles = [
     tokensPattern,
     css`
         :host {
-            display: block;
+            display: flex;
             border-left: var(--border-split);
             border-right: var(--border-split);
             line-height: 1.75rem;
+            flex-flow: column nowrap;
         }
         .content-padding {
-            padding: 0 var(--space-x2);
+            padding: 0 var(--space-p10);
             box-sizing: border-box;
         }
+
         .content-header {
             border-bottom: var(--border-split);
-            padding-top: var(--space-y4);
-            padding-bottom: var(--space-y2);
+            padding-top: var(--space-l);
+            padding-bottom: var(--space-xs);
             min-height: 200px;
             align-items: flex-end;
             display: flex;
@@ -88,15 +114,26 @@ content.styles = [
             background: var(--pattern-background);
         }
         .content-markdown {
-            padding-top: var(--space-y2);
-            padding-bottom: var(--space-y2);
+            padding-top: var(--space-xs);
+            padding-bottom: var(--space-xs);
+        }
+        .content-footer {
+            margin: auto 0px 0px;
+            border-top: var(--border-split);
         }
         ::slotted([slot="header"]) {
             margin: 0px;
         }
 
         ::slotted(doc-code) {
-            margin: 0px calc(var(--space-x2) * -1);
+            margin: 0px;
+        }
+        ::slotted(ol) {
+            list-style-type: decimal-leading-zero;
+        }
+
+        :host-context(ul li::marker) {
+            font-weight: bold;
         }
     `,
 ];

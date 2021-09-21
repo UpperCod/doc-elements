@@ -1,10 +1,3 @@
-export {
-    RouterRedirect,
-    RouterSwitch,
-    RouterCase,
-    RouterLink,
-} from "@atomico/components/router";
-
 import { Container } from "./container/container.jsx";
 export { Container } from "./container/container.jsx";
 
@@ -26,9 +19,6 @@ export { Pagination, PaginationItem } from "./pagination/pagination.jsx";
 import { Code } from "./code/code.jsx";
 export { Code } from "./code/code.jsx";
 
-import { Button } from "./button/button.jsx";
-export { Button } from "./button/button.jsx";
-
 import { Table } from "./table/table.jsx";
 export { Table } from "./table/table.jsx";
 
@@ -48,7 +38,6 @@ customElements.define("doc-source", Source);
 customElements.define("doc-group", Group);
 customElements.define("doc-pagination", Pagination);
 customElements.define("doc-pagination-item", PaginationItem);
-customElements.define("doc-button", Button);
 customElements.define("doc-table", Table);
 customElements.define("doc-quote", Quote);
 customElements.define("doc-preview", Preview);

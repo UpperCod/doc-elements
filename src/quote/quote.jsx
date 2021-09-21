@@ -43,7 +43,7 @@ quote.styles = [
         }
 
         .quote {
-            padding-right: var(--space-x);
+            padding-right: var(--space-xs);
             padding-top: 0.2em;
         }
 
