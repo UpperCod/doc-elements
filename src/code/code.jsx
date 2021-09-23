@@ -1,9 +1,10 @@
 import { c, css, useHost, useMemo, useRef } from "atomico";
 import { Preview } from "../preview/preview.jsx";
 import { useCopy } from "@atomico/hooks/use-copy";
+import { usePromise } from "@atomico/hooks/use-promise";
 import { tokensColor, tokensSpace } from "../tokens";
 import { useSlot } from "@atomico/hooks/use-slot";
-import Prism from "https://cdn.skypack.dev/prismjs";
+
 import { themeA11yDark } from "./theme";
 
 function code({ type }) {
@@ -16,19 +17,24 @@ function code({ type }) {
 
     const code = slot.find((item) => item instanceof Element);
 
-    const html = useMemo(() => {
-        try {
-            return code && format
-                ? Prism.highlight(
-                      code.textContent,
-                      Prism.languages[format],
-                      format
-                  )
-                : "";
-        } catch (e) {
-            return "";
-        }
-    }, [code, format]);
+    const [html = "", state] = usePromise(
+        async () => {
+            const Prism = await import("https://cdn.skypack.dev/prismjs");
+            try {
+                return format
+                    ? Prism.highlight(
+                          code.textContent,
+                          Prism.languages[format],
+                          format
+                      )
+                    : "";
+            } catch {
+                return "";
+            }
+        },
+        !!code,
+        [code, format]
+    );
 
     return (
         <host shadowDom preview={!!preview}>
