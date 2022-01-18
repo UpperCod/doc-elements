@@ -116,7 +116,7 @@ code.styles = [
         }
 
         .pre,
-        .inject {
+        .preview {
             padding: var(--space-xs);
         }
 
