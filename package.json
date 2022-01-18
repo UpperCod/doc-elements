@@ -1,7 +1,7 @@
 {
   "name": "doc-elements",
   "description": "webcomponents for fast, simple and lightweight documentation.",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "scripts": {
     "start": "vite --force",
     "build": "vite build",
@@ -9,12 +9,12 @@
     "prepublishOnly": "npm run exports"
   },
   "dependencies": {
-    "@atomico/hooks": "latest",
+    "@atomico/hooks": "^3.26.3",
     "@uppercod/markdown-inline": "latest",
     "atomico": "^1.32.0"
   },
   "devDependencies": {
-    "@atomico/components": "latest",
+    "@atomico/components": "^1.6.0",
     "@atomico/exports": "latest",
     "@uppercod/vite-meta-url": "latest",
     "@uppercod/vite-meta-url-load-css": "latest",
